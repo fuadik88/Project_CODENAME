@@ -26,9 +26,7 @@ public class VeterinaryAssociation {
         anim.wInfo(d1);
 
         anim.customerAnimals(((Customer)cm1));
-
-
-
+        System.out.println(c1.isRegistered());
     }
 
     private static void  wArray(ArrayList<Object> array){

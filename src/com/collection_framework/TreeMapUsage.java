@@ -1,7 +1,6 @@
 package com.collection_framework;
 
-import java.util.Comparator;
-import java.util.TreeMap;
+import java.util.*;
 
 public class TreeMapUsage {
     public static void main(String[] args) {
@@ -25,6 +24,16 @@ public class TreeMapUsage {
         Anime a2 = new Anime(13,"asdas");
         Anime a3 = new Anime(8,"kguyhfgh");
         Anime a4 = new Anime(3,"gfghd");
+
+        String asd = "akjsdk";
+        List<String> shuffle = Arrays.asList(asd.split(""));        //SHUFFLE
+        System.out.println("LIST STRING: " + shuffle);
+        Collections.shuffle(shuffle);
+        String afterShuffle = "";
+        for(String r : shuffle){
+            afterShuffle += r;
+        }
+        System.out.println(afterShuffle);
 
         map2.put(a1,7);
         map2.put(a2,45);

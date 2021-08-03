@@ -3,25 +3,29 @@ package com.PROJECT_lucky_ten;
 import java.util.*;
 
 public class Main {
-    static final int MAX_VALUE = 60;
+    static final int MAX_VALUE = 50;
     static final int TIMES_X = 1000000;
 
     public static void main(String[] args) {
         Map<Integer, Integer> map = new HashMap<>();
         List<Integer> list = new ArrayList<>();
-        Set<Integer> luckySet = new HashSet<>();
+        Set<Integer> luckySet = new TreeSet<>(); //HashSet for random, TreeSet for sequence.
 
         fillMap(map);
         transferMap(map, list);
         luckyTen(luckySet, list);
         System.out.println("Map size: " + map.size());
         System.out.println("List size: " + list.size());
+        System.out.println("Set size: " + luckySet.size());
+        System.out.println("****** Lucky Ten Number ******");
+        for(int r : luckySet)
+            System.out.print(r + "  ");
 
     }
 
     private static void luckyTen(Set<Integer> luckySet, List<Integer> list) {
         Collections.shuffle(list);
-        while (luckySet.size() <= 10 /*<11*/) {
+        while (luckySet.size() < 10) {
             int random = (int) (Math.random() * MAX_VALUE);
             luckySet.add(list.get(random));
         }

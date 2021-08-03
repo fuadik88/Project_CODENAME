@@ -1,5 +1,7 @@
 package com.exceptions_fileoperations;
 
+import java.io.FileNotFoundException;
+
 public class ThrowsUsage {
     public static void main(String[] args) {
         try {
@@ -23,22 +25,22 @@ public class ThrowsUsage {
     }
 }
 
-class A{
-    void methodA() throws ClassNotFoundException {
+class A {
+    void methodA() throws ClassNotFoundException, FileNotFoundException {
         System.out.println("A method");
     }
 }
 
-class B extends A{
+class B extends A {
     @Override
-    void methodA() throws ArrayIndexOutOfBoundsException, ClassNotFoundException {
+    void methodA() {
         System.out.println("B method");
     }
 }
 
-class C extends B{
+class C extends B {
     @Override
-    void methodA() throws ArrayIndexOutOfBoundsException, ClassCastException, ClassNotFoundException {
+    void methodA() throws ArrayIndexOutOfBoundsException, ClassCastException {
         System.out.println("C method");
     }
 }

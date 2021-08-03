@@ -11,7 +11,7 @@ public class ReturningException {
         try {
             str += "try";
             ClassNotFoundException ce = new ClassNotFoundException();
-            throw ce; //throw sends object to catch
+            throw ce; //throw sends object to catch. Or |throw new ClassNotFoundException();
         } catch (Exception e) {
             str += " catch";
         } finally {
